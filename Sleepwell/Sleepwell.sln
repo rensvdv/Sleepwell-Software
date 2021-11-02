@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sleepwell", "Sleepwell\Sleepwell.csproj", "{D0F9632E-6612-4676-BEF5-641C87C38785}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0F9632E-6612-4676-BEF5-641C87C38785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F9632E-6612-4676-BEF5-641C87C38785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F9632E-6612-4676-BEF5-641C87C38785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F9632E-6612-4676-BEF5-641C87C38785}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {824010C3-429B-42BF-928A-208C5742F276}
+	EndGlobalSection
+EndGlobal
