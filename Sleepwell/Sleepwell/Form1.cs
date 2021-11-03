@@ -21,8 +21,10 @@ namespace Sleepwell
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            tbxOpstaan.Text = "bijvoorbeeld 8:00";
+            tbxOpstaan.ForeColor = Color.Gray;
             //CreateChart();
-            
+
         }
 
         private void btnSlaaptijdBerekenen_Click(object sender, EventArgs e)
@@ -96,7 +98,25 @@ namespace Sleepwell
 
         private void tijd_Tick(object sender, EventArgs e)
         {
-            lblHuidigeTijd.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblHuidigeTijd.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void tbxOpstaan_Enter(object sender, EventArgs e)
+        {
+            if (tbxOpstaan.Text == "bijvoorbeeld 8:00")
+            {
+                tbxOpstaan.ForeColor = Color.Black;
+                tbxOpstaan.Text = "";
+            }
+        } 
+
+        private void tbxOpstaan_Leave(object sender, EventArgs e)
+        {
+            if (tbxOpstaan.Text == "")
+            {
+                tbxOpstaan.Text = "bijvoorbeeld 8:00";
+                tbxOpstaan.ForeColor = Color.Gray;
+            }
         }
     }
 }

@@ -140,15 +140,16 @@ namespace Sleepwell
             // 
             // tbxOpstaan
             // 
-            this.tbxOpstaan.Location = new System.Drawing.Point(276, 84);
+            this.tbxOpstaan.Location = new System.Drawing.Point(254, 81);
             this.tbxOpstaan.Name = "tbxOpstaan";
-            this.tbxOpstaan.Size = new System.Drawing.Size(113, 22);
+            this.tbxOpstaan.Size = new System.Drawing.Size(144, 22);
             this.tbxOpstaan.TabIndex = 19;
-            this.tbxOpstaan.Text = "(bijv 8:00)";
+            this.tbxOpstaan.Enter += new System.EventHandler(this.tbxOpstaan_Enter);
+            this.tbxOpstaan.Leave += new System.EventHandler(this.tbxOpstaan_Leave);
             // 
             // btnSlaaptijdBerekenen
             // 
-            this.btnSlaaptijdBerekenen.Location = new System.Drawing.Point(287, 116);
+            this.btnSlaaptijdBerekenen.Location = new System.Drawing.Point(286, 123);
             this.btnSlaaptijdBerekenen.Name = "btnSlaaptijdBerekenen";
             this.btnSlaaptijdBerekenen.Size = new System.Drawing.Size(83, 53);
             this.btnSlaaptijdBerekenen.TabIndex = 18;
