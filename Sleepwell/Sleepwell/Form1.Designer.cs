@@ -29,6 +29,7 @@ namespace Sleepwell
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTijdAanraden = new System.Windows.Forms.Label();
             this.rbKorteSlaap = new System.Windows.Forms.RadioButton();
             this.rbNormaleSlaap = new System.Windows.Forms.RadioButton();
@@ -41,6 +42,8 @@ namespace Sleepwell
             this.btnSlaaptijdBerekenen = new System.Windows.Forms.Button();
             this.tbxLeeftijd = new System.Windows.Forms.TextBox();
             this.tbxNaam = new System.Windows.Forms.TextBox();
+            this.tijd = new System.Windows.Forms.Timer(this.components);
+            this.lblHuidigeTijd = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTijdAanraden
@@ -48,7 +51,7 @@ namespace Sleepwell
             this.lblTijdAanraden.AutoSize = true;
             this.lblTijdAanraden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTijdAanraden.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblTijdAanraden.Location = new System.Drawing.Point(486, 41);
+            this.lblTijdAanraden.Location = new System.Drawing.Point(271, 221);
             this.lblTijdAanraden.Name = "lblTijdAanraden";
             this.lblTijdAanraden.Size = new System.Drawing.Size(240, 25);
             this.lblTijdAanraden.TabIndex = 27;
@@ -167,12 +170,30 @@ namespace Sleepwell
             this.tbxNaam.Size = new System.Drawing.Size(100, 22);
             this.tbxNaam.TabIndex = 16;
             // 
+            // tijd
+            // 
+            this.tijd.Enabled = true;
+            this.tijd.Interval = 1000;
+            this.tijd.Tick += new System.EventHandler(this.tijd_Tick);
+            // 
+            // lblHuidigeTijd
+            // 
+            this.lblHuidigeTijd.AutoSize = true;
+            this.lblHuidigeTijd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHuidigeTijd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblHuidigeTijd.Location = new System.Drawing.Point(576, 9);
+            this.lblHuidigeTijd.Name = "lblHuidigeTijd";
+            this.lblHuidigeTijd.Size = new System.Drawing.Size(88, 24);
+            this.lblHuidigeTijd.TabIndex = 28;
+            this.lblHuidigeTijd.Text = "00:00:00";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(786, 478);
+            this.ClientSize = new System.Drawing.Size(676, 490);
+            this.Controls.Add(this.lblHuidigeTijd);
             this.Controls.Add(this.lblTijdAanraden);
             this.Controls.Add(this.rbKorteSlaap);
             this.Controls.Add(this.rbNormaleSlaap);
@@ -207,6 +228,8 @@ namespace Sleepwell
         private System.Windows.Forms.Button btnSlaaptijdBerekenen;
         private System.Windows.Forms.TextBox tbxLeeftijd;
         private System.Windows.Forms.TextBox tbxNaam;
+        private System.Windows.Forms.Timer tijd;
+        private System.Windows.Forms.Label lblHuidigeTijd;
     }
 }
 

@@ -93,6 +93,10 @@ namespace Sleepwell
             //chrtHeartbeat.Series.Add(series);
             
         }
-            
+
+        private void tijd_Tick(object sender, EventArgs e)
+        {
+            lblHuidigeTijd.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
     }
 }
