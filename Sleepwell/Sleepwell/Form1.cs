@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using MySql.Data.MySqlClient;
 
 namespace Sleepwell
 {
@@ -18,8 +19,28 @@ namespace Sleepwell
             InitializeComponent();
             
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
+        private void SQLConnect()
+        {
+            try
+            {
+                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.26;port=3306;username=root2;password=123456");
+                sqlconnect.Open();
+                if (sqlconnect.State == ConnectionState.Open)
+                {
+                    MessageBox.Show("I CONNECTED TO DATABASE");
+                }
+                else
+                {
+                    MessageBox.Show("I WAS UNABLE TO CONNECT");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+    private void Form1_Load(object sender, EventArgs e)
         {
             tbxOpstaan.Text = "bijvoorbeeld 8:00";
             tbxOpstaan.ForeColor = Color.Gray;
@@ -117,6 +138,11 @@ namespace Sleepwell
                 tbxOpstaan.Text = "bijvoorbeeld 8:00";
                 tbxOpstaan.ForeColor = Color.Gray;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SQLConnect();
         }
     }
 }
