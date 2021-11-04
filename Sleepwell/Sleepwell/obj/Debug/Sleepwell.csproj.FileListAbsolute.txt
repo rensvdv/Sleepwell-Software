@@ -65,3 +65,5 @@ C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj
 C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.exe
 C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.pdb
 C:\Users\rensv\Desktop\School\Fontys\Proftaak\Sleepwell Software\Sleepwell Software\Sleepwell\Sleepwell\bin\Debug\EASendMail.dll
+C:\Users\rensv\Desktop\School\Fontys\Proftaak\Sleepwell Software\Sleepwell Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.Form2.resources
+C:\Users\rensv\Desktop\School\Fontys\Proftaak\Sleepwell Software\Sleepwell Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.Form3.resources
