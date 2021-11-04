@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using EASendMail;
 using MySql.Data.MySqlClient;
 
 namespace Sleepwell
@@ -140,9 +141,55 @@ namespace Sleepwell
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void MailVersturen()
+        {
+            try
+            {
+                //email aanmaken
+                SmtpMail reminder = new SmtpMail("TryIt");
+
+                //afzender en ontvanger kiezen
+                reminder.From = "sleepwellfontys@gmail.com";
+                reminder.To = "rensvelden@gmail.com";
+
+                //inhoud van de email toevoegen
+                reminder.Subject = "Reminder";
+                reminder.TextBody = "Over 1u is uw slaaptijd";
+
+                //gmail smtp server 
+                SmtpServer server = new SmtpServer("smtp.gmail.com");
+
+                //gebruiker moet zichzelf verifieren
+                server.User = "sleepwellfontys@gmail.com";
+                server.Password = "LekkerLekker";
+
+                //port instellen
+                server.Port = 465;
+
+                //SSL/TLS detecteren en connecten
+                server.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                //client aanmaken
+                SmtpClient client = new SmtpClient();
+
+                //email verzenden
+                client.SendMail(server, reminder);
+                MessageBox.Show("Email is verzonden");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void btnAttemptConnectSQL_Click(object sender, EventArgs e)
         {
             SQLConnect();
+        }
+
+        private void btnStuurReminder_Click(object sender, EventArgs e)
+        {
+            MailVersturen();
         }
     }
 }

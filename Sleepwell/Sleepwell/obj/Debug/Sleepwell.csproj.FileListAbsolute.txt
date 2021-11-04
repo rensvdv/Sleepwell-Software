@@ -64,3 +64,4 @@ C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj
 C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.csproj.CopyComplete
 C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.exe
 C:\Users\robbo\source\repos\Sleepwell\Sleepwell-Software\Sleepwell\Sleepwell\obj\Debug\Sleepwell.pdb
+C:\Users\rensv\Desktop\School\Fontys\Proftaak\Sleepwell Software\Sleepwell Software\Sleepwell\Sleepwell\bin\Debug\EASendMail.dll
