@@ -20,6 +20,9 @@ namespace Sleepwell
             InitializeComponent();
             
         }
+        //int om af te tellen voor de reminder
+        int timer = 10;
+
         private void SQLConnect()
         {
             try
@@ -43,6 +46,7 @@ namespace Sleepwell
 
     private void Form1_Load(object sender, EventArgs e)
         {
+            //placeholder textbox tekst inladen
             tbxOpstaan.Text = "bijvoorbeeld 8:00";
             tbxOpstaan.ForeColor = Color.Gray;
             //CreateChart();
@@ -52,7 +56,7 @@ namespace Sleepwell
         private void btnSlaaptijdBerekenen_Click(object sender, EventArgs e)
         {
             //controleren of de textboxes leeg zijn
-            //zoja dan voert de code niet verder uit
+            //zoja dan voert de rest van de code in de button click niet uit
             if (String.IsNullOrEmpty(tbxNaam.Text))
             {
                 MessageBox.Show("Voer een naam in");
@@ -120,11 +124,30 @@ namespace Sleepwell
 
         private void tijd_Tick(object sender, EventArgs e)
         {
+            //laat de huidige tijd zien
             lblHuidigeTijd.Text = DateTime.Now.ToString("HH:mm:ss");
+
+            //waarde timer in de reminder label zetten
+            lblReminder.Text = timer.ToString();
+
+            //timer waarde verlagen
+            timer -= 1;
+
+            //als timer 0 is mail versturen
+            //daarna het label onzichtbaar maken
+            if (timer == 0)
+            {
+                MailVersturen();
+            }
+            if (timer <= 0)
+            {
+                lblReminder.Visible = false;
+            }
         }
 
         private void tbxOpstaan_Enter(object sender, EventArgs e)
         {
+            //als de gebruiker op de textbox klikt gaat de placeholder tekst weg
             if (tbxOpstaan.Text == "bijvoorbeeld 8:00")
             {
                 tbxOpstaan.ForeColor = Color.Black;
@@ -134,6 +157,7 @@ namespace Sleepwell
 
         private void tbxOpstaan_Leave(object sender, EventArgs e)
         {
+            //als de gebruiker niks invoert en weer uit de textbox gaat, komt de tekst terug
             if (tbxOpstaan.Text == "")
             {
                 tbxOpstaan.Text = "bijvoorbeeld 8:00";

@@ -45,7 +45,8 @@ namespace Sleepwell
             this.tijd = new System.Windows.Forms.Timer(this.components);
             this.lblHuidigeTijd = new System.Windows.Forms.Label();
             this.btnAttemptConnectSQL = new System.Windows.Forms.Button();
-            this.btnStuurReminder = new System.Windows.Forms.Button();
+            this.lblReminder = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTijdAanraden
@@ -200,15 +201,27 @@ namespace Sleepwell
             this.btnAttemptConnectSQL.UseVisualStyleBackColor = true;
             this.btnAttemptConnectSQL.Click += new System.EventHandler(this.btnAttemptConnectSQL_Click);
             // 
-            // btnStuurReminder
+            // lblReminder
             // 
-            this.btnStuurReminder.Location = new System.Drawing.Point(572, 43);
-            this.btnStuurReminder.Name = "btnStuurReminder";
-            this.btnStuurReminder.Size = new System.Drawing.Size(92, 39);
-            this.btnStuurReminder.TabIndex = 30;
-            this.btnStuurReminder.Text = "Reminder";
-            this.btnStuurReminder.UseVisualStyleBackColor = true;
-            this.btnStuurReminder.Click += new System.EventHandler(this.btnStuurReminder_Click);
+            this.lblReminder.AutoSize = true;
+            this.lblReminder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReminder.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblReminder.Location = new System.Drawing.Point(632, 58);
+            this.lblReminder.Name = "lblReminder";
+            this.lblReminder.Size = new System.Drawing.Size(32, 24);
+            this.lblReminder.TabIndex = 31;
+            this.lblReminder.Text = "10";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(519, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 24);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Reminder:";
             // 
             // Form1
             // 
@@ -216,7 +229,8 @@ namespace Sleepwell
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(676, 490);
-            this.Controls.Add(this.btnStuurReminder);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblReminder);
             this.Controls.Add(this.btnAttemptConnectSQL);
             this.Controls.Add(this.lblHuidigeTijd);
             this.Controls.Add(this.lblTijdAanraden);
@@ -256,7 +270,8 @@ namespace Sleepwell
         private System.Windows.Forms.Timer tijd;
         private System.Windows.Forms.Label lblHuidigeTijd;
         private System.Windows.Forms.Button btnAttemptConnectSQL;
-        private System.Windows.Forms.Button btnStuurReminder;
+        private System.Windows.Forms.Label lblReminder;
+        private System.Windows.Forms.Label label3;
     }
 }
 
