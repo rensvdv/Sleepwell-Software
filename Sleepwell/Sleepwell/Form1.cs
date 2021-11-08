@@ -23,27 +23,24 @@ namespace Sleepwell
         
         private void SQLConnect()
         {
-            try
+            try //Probeer een connectie te maken met de SQL
             {
-                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.26;port=3306;username=root2;password=123456");
+                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!"); // SQL Gegevens
                 sqlconnect.Open();
                 if (sqlconnect.State == ConnectionState.Open)
                 {
                     MessageBox.Show("I CONNECTED TO DATABASE");
                 }
-                else
-                {
-                    MessageBox.Show("I WAS UNABLE TO CONNECT");
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("I WAS UNABLE TO CONNECT " + ex.Message);
             }
         }
 
     private void Form1_Load(object sender, EventArgs e)
         {
+
 
         }
      
@@ -66,8 +63,9 @@ namespace Sleepwell
         {
             try
             {
-                string naam = tbxNaam.Text;
-                int leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
+
+                string naam = tbxEmail.Text;
+                int leeftijd = Convert.ToInt32(tbxPW.Text);
 
                 this.Hide();
                 Form2 f2 = new Form2(naam, leeftijd);
@@ -77,6 +75,13 @@ namespace Sleepwell
             {
                 MessageBox.Show("Voer een naam en/of leeftijd in");
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.Show();
+            this.Hide();
         }
     }
 }
