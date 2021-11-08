@@ -25,7 +25,7 @@ namespace Sleepwell
         {
             try
             {
-                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.26;port=3306;username=root2;password=123456");
+                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!");
                 sqlconnect.Open();
                 if (sqlconnect.State == ConnectionState.Open)
                 {
@@ -73,10 +73,17 @@ namespace Sleepwell
                 Form2 f2 = new Form2(naam, leeftijd);
                 f2.ShowDialog();
             }
-            catch (Exception es)
+            catch (Exception)
             {
-                MessageBox.Show("Voer een naam en/of leeftijd in");
+                MessageBox.Show("Voer een email en/of wachtwoord in.");
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            Form5 f5 = new Form5();
+            f5.Show();
+            this.Hide();
         }
     }
 }
