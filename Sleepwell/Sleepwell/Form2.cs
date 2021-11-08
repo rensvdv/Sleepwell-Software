@@ -28,7 +28,7 @@ namespace Sleepwell
             
             DateTime opstaTijd = DateTime.Parse(tbxOpstaan.Text);
             DateTime slaaptijd = SlaaptijdBerekenen(opstaTijd);
-            
+            //.ToShortTimeString haalt de datum uit de DateTime.
             
             this.Hide();
             Form3 f3 = new Form3(naam, leeftijd, slaaptijd.ToShortTimeString());
