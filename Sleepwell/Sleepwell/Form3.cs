@@ -103,6 +103,9 @@ namespace Sleepwell
         private void btnNaarForm4_Click(object sender, EventArgs e)
         {
             tijd.Enabled = false;
+            this.Hide();
+            Form4 f4 = new Form4(naam, leeftijd, slaaptijd);
+            f4.ShowDialog();
         }
     }
 }
