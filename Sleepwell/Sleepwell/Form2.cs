@@ -68,16 +68,23 @@ namespace Sleepwell
 
         private void tbxOpstaan_Leave(object sender, EventArgs e)
         {
+            placeholderTextBox();
+        }
+
+        private void tbxOpstaan_Enter(object sender, EventArgs e)
+        {
+            placeholderTextBox();
+            
+        }
+        private void placeholderTextBox()
+        {
             //als de gebruiker niks invoert en weer uit de textbox gaat, komt de tekst terug
             if (tbxOpstaan.Text == "")
             {
                 tbxOpstaan.Text = "bijvoorbeeld 8:00";
                 tbxOpstaan.ForeColor = Color.Gray;
             }
-        }
 
-        private void tbxOpstaan_Enter(object sender, EventArgs e)
-        {
             //als de gebruiker op de textbox klikt gaat de placeholder tekst weg
             if (tbxOpstaan.Text == "bijvoorbeeld 8:00")
             {
