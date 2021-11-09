@@ -16,32 +16,12 @@ namespace Sleepwell
         {
             InitializeComponent();
         }
-        private void checkvelden()
-        {
-            if (string.IsNullOrEmpty(tbxEmail.Text) || string.IsNullOrEmpty(tbxLeeftijd.Text) || string.IsNullOrEmpty(tbxEmail.Text) || string.IsNullOrEmpty(tbxWachtwoord.Text))
-            {
-                MessageBox.Show("Graag alle velden geldig invullen");
-            }
-            else
-            {
-                Form1 f1 = new Form1();
-                this.Close();
-                f1.Show();
-            }
-        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
-                checkvelden();
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("Graag een geldige leeftijd invullen!");
-            }
-
+            Form1 f1 = new Form1();
+            this.Close();
+            f1.Show();
 
         }
     }
