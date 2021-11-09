@@ -59,7 +59,7 @@ namespace Sleepwell
             // 
             // dataTimer
             // 
-            this.dataTimer.Interval = 1000;
+            this.dataTimer.Interval = 500;
             this.dataTimer.Tick += new System.EventHandler(this.DataTimer_Tick);
             // 
             // listBox1

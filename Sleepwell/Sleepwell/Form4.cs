@@ -21,6 +21,7 @@ namespace Sleepwell
         string slaaptijd;
         bool isConnected = false;
 
+        int pulseInNumbers;
         string pulse;
         SerialPort port;
         public Form4(string naam, int leeftijd, string slaaptijd)
@@ -65,10 +66,35 @@ namespace Sleepwell
             data = port.ReadExisting();
             if(data != "")
             {
-                listBox1.Items.Add(data);
+               
+                if (data.Contains("\n"))
+                {
+                    string cleanedData = data.Replace("\n", "").Replace("\r", "");
+                    pulseInNumbers = int.Parse(data);
+                }
+
+
+                if (pulseInNumbers > 150)
+                {
+
+                }
+                else
+                {
+                    data = pulseInNumbers.ToString();
+                    listBox1.Items.Add(data);
+                }
+
             }
-            
+            else
+            {
+               
+            }
+
+
+
+
             return data;
+
         }
         private void CreateChart()
         {
@@ -86,6 +112,8 @@ namespace Sleepwell
         private void DataTimer_Tick(object sender, EventArgs e)
         {
             GetData(pulse);
+            
+            
             
         }
     }
