@@ -36,6 +36,7 @@ namespace Sleepwell
             this.label1 = new System.Windows.Forms.Label();
             this.tbxOpstaan = new System.Windows.Forms.TextBox();
             this.btnSlaaptijdBerekenen = new System.Windows.Forms.Button();
+            this.lblFoutmelding = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // rbKorteSlaap
@@ -115,12 +116,25 @@ namespace Sleepwell
             this.btnSlaaptijdBerekenen.UseVisualStyleBackColor = true;
             this.btnSlaaptijdBerekenen.Click += new System.EventHandler(this.btnSlaaptijdBerekenen_Click);
             // 
+            // lblFoutmelding
+            // 
+            this.lblFoutmelding.AutoSize = true;
+            this.lblFoutmelding.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoutmelding.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFoutmelding.Location = new System.Drawing.Point(224, 38);
+            this.lblFoutmelding.Name = "lblFoutmelding";
+            this.lblFoutmelding.Size = new System.Drawing.Size(123, 25);
+            this.lblFoutmelding.TabIndex = 38;
+            this.lblFoutmelding.Text = "foutmelding";
+            this.lblFoutmelding.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblFoutmelding);
             this.Controls.Add(this.rbKorteSlaap);
             this.Controls.Add(this.rbNormaleSlaap);
             this.Controls.Add(this.rbLangeSlaap);
@@ -146,5 +160,6 @@ namespace Sleepwell
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxOpstaan;
         private System.Windows.Forms.Button btnSlaaptijdBerekenen;
+        private System.Windows.Forms.Label lblFoutmelding;
     }
 }

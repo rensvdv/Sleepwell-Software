@@ -41,6 +41,7 @@ namespace Sleepwell
             this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblFoutmelding = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label5
@@ -148,12 +149,25 @@ namespace Sleepwell
             this.label2.TabIndex = 36;
             this.label2.Text = "Geen account? Maak er een aan!";
             // 
+            // lblFoutmelding
+            // 
+            this.lblFoutmelding.AutoSize = true;
+            this.lblFoutmelding.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoutmelding.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFoutmelding.Location = new System.Drawing.Point(170, 84);
+            this.lblFoutmelding.Name = "lblFoutmelding";
+            this.lblFoutmelding.Size = new System.Drawing.Size(123, 25);
+            this.lblFoutmelding.TabIndex = 37;
+            this.lblFoutmelding.Text = "foutmelding";
+            this.lblFoutmelding.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(676, 490);
+            this.Controls.Add(this.lblFoutmelding);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
@@ -184,6 +198,7 @@ namespace Sleepwell
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblFoutmelding;
     }
 }
 

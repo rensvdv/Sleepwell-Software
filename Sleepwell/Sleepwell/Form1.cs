@@ -75,7 +75,9 @@ namespace Sleepwell
             }
             catch (Exception)
             {
-                MessageBox.Show("Voer een email en/of wachtwoord in.");
+                lblFoutmelding.Text = "Uw email of wachtwoord is incorrect.";
+                lblFoutmelding.ForeColor = Color.Red;
+                lblFoutmelding.Visible = true;
             }
         }
 

@@ -25,13 +25,21 @@ namespace Sleepwell
         }
         private void btnSlaaptijdBerekenen_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DateTime opstaTijd = DateTime.Parse(tbxOpstaan.Text);
+                DateTime slaaptijd = SlaaptijdBerekenen(opstaTijd);
             
-            DateTime opstaTijd = DateTime.Parse(tbxOpstaan.Text);
-            DateTime slaaptijd = SlaaptijdBerekenen(opstaTijd);
-            
-            this.Hide();
-            Form3 f3 = new Form3(naam, leeftijd, slaaptijd.ToShortTimeString());
-            f3.ShowDialog();
+                this.Hide();
+                Form3 f3 = new Form3(naam, leeftijd, slaaptijd.ToShortTimeString());
+                f3.ShowDialog();
+            }
+            catch(Exception)
+            {
+                lblFoutmelding.Text = "Voer een geldige tijd in";
+                lblFoutmelding.ForeColor = Color.Red;
+                lblFoutmelding.Visible = true;
+            }
         }
 
         private DateTime SlaaptijdBerekenen(DateTime opstaTijd)
