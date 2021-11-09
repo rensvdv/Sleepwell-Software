@@ -69,6 +69,7 @@ namespace Sleepwell
             string email = "";
             string password = "";
             string name = "";
+            int leeftijd = 11;
             string query = "select email,password,name from users WHERE email ='" + tbxEmail.Text + "' AND password ='" + tbxWW.Text + "'";
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
@@ -82,7 +83,7 @@ namespace Sleepwell
 
                 }
                 MessageBox.Show("Welcome back " + name);
-                Form2 f2 = new Form2();
+                Form2 f2 = new Form2(name, leeftijd);
                 f2.Show();
                 this.Hide();
             }
@@ -91,22 +92,6 @@ namespace Sleepwell
                 MessageBox.Show("Incorrect user name or password");
             }
             sqlconnect.Close();
-            /*
-            try
-            {
-                string naam = tbxNaam.Text;
-                int leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
-
-                this.Hide();
-                Form2 f2 = new Form2(naam, leeftijd);
-                f2.ShowDialog();
-            }
-            catch (Exception)
-            {
-                lblFoutmelding.Text = "Uw email of wachtwoord is incorrect.";
-                lblFoutmelding.ForeColor = Color.Red;
-                lblFoutmelding.Visible = true;
-            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
