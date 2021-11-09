@@ -32,8 +32,8 @@ namespace Sleepwell
             this.components = new System.ComponentModel.Container();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbxLeeftijd = new System.Windows.Forms.TextBox();
-            this.tbxNaam = new System.Windows.Forms.TextBox();
+            this.tbxWW = new System.Windows.Forms.TextBox();
+            this.tbxEmail = new System.Windows.Forms.TextBox();
             this.tijd = new System.Windows.Forms.Timer(this.components);
             this.lblHuidigeTijd = new System.Windows.Forms.Label();
             this.btnAttemptConnectSQL = new System.Windows.Forms.Button();
@@ -42,6 +42,8 @@ namespace Sleepwell
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFoutmelding = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -66,19 +68,19 @@ namespace Sleepwell
             this.label4.TabIndex = 20;
             this.label4.Text = "EMAIL";
             // 
-            // tbxLeeftijd
+            // tbxWW
             // 
-            this.tbxLeeftijd.Location = new System.Drawing.Point(181, 214);
-            this.tbxLeeftijd.Name = "tbxLeeftijd";
-            this.tbxLeeftijd.Size = new System.Drawing.Size(317, 22);
-            this.tbxLeeftijd.TabIndex = 17;
+            this.tbxWW.Location = new System.Drawing.Point(181, 214);
+            this.tbxWW.Name = "tbxWW";
+            this.tbxWW.Size = new System.Drawing.Size(317, 22);
+            this.tbxWW.TabIndex = 17;
             // 
-            // tbxNaam
+            // tbxEmail
             // 
-            this.tbxNaam.Location = new System.Drawing.Point(181, 137);
-            this.tbxNaam.Name = "tbxNaam";
-            this.tbxNaam.Size = new System.Drawing.Size(317, 22);
-            this.tbxNaam.TabIndex = 16;
+            this.tbxEmail.Location = new System.Drawing.Point(181, 137);
+            this.tbxEmail.Name = "tbxEmail";
+            this.tbxEmail.Size = new System.Drawing.Size(317, 22);
+            this.tbxEmail.TabIndex = 16;
             // 
             // tijd
             // 
@@ -161,6 +163,10 @@ namespace Sleepwell
             this.lblFoutmelding.Text = "foutmelding";
             this.lblFoutmelding.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,11 +182,12 @@ namespace Sleepwell
             this.Controls.Add(this.lblHuidigeTijd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbxLeeftijd);
-            this.Controls.Add(this.tbxNaam);
+            this.Controls.Add(this.tbxWW);
+            this.Controls.Add(this.tbxEmail);
             this.Name = "Form1";
             this.Text = "Sleepwell";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,8 +196,8 @@ namespace Sleepwell
         #endregion
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbxLeeftijd;
-        private System.Windows.Forms.TextBox tbxNaam;
+        private System.Windows.Forms.TextBox tbxWW;
+        private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Timer tijd;
         private System.Windows.Forms.Label lblHuidigeTijd;
         private System.Windows.Forms.Button btnAttemptConnectSQL;
@@ -199,6 +206,7 @@ namespace Sleepwell
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFoutmelding;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

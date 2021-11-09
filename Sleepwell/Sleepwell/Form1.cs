@@ -25,7 +25,7 @@ namespace Sleepwell
         {
             try
             {
-                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!");
+                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
                 sqlconnect.Open();
                 if (sqlconnect.State == ConnectionState.Open)
                 {
@@ -64,6 +64,34 @@ namespace Sleepwell
 
         private void btnDoorNaarForm2_Click(object sender, EventArgs e)
         {
+            MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
+            sqlconnect.Open();
+            string email = "";
+            string password = "";
+            string name = "";
+            string query = "select email,password,name from users WHERE email ='" + tbxEmail.Text + "' AND password ='" + tbxWW.Text + "'";
+            MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
+            MySqlDataReader usersRow = cmd.ExecuteReader();
+            if(usersRow.HasRows)
+            {
+                while(usersRow.Read())
+                {
+                    email = usersRow["email"].ToString();
+                    password = usersRow["password"].ToString();
+                    name = usersRow["name"].ToString();
+
+                }
+                MessageBox.Show("Welcome back " + name);
+                Form2 f2 = new Form2();
+                f2.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect user name or password");
+            }
+            sqlconnect.Close();
+            /*
             try
             {
                 string naam = tbxNaam.Text;
