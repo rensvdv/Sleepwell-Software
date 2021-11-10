@@ -16,22 +16,28 @@ namespace Sleepwell
     public partial class Form2 : Form
     {
         string naam;
+        double sleep_duration;
         int leeftijd;
-        public Form2(string naam, int leeftijd)
+        User CurrentUser;
+        sleepSession sleepSession;
+        DateTime opstaTijd;
+        DateTime slaaptijd;
+        DateTime date;
+        public Form2(User currentUser)
         {
             InitializeComponent();
-            this.naam = naam;
-            this.leeftijd = leeftijd;
+            this.CurrentUser = currentUser;
+            
         }
         private void btnSlaaptijdBerekenen_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime opstaTijd = DateTime.Parse(tbxOpstaan.Text);
-                DateTime slaaptijd = SlaaptijdBerekenen(opstaTijd);
-            
+                 opstaTijd = DateTime.Parse(tbxOpstaan.Text);
+                 slaaptijd = SlaaptijdBerekenen(opstaTijd);
+                sleepSession = new sleepSession(CurrentUser.Id, sleep_duration, 0, date ); // als de class word aangeroepen geef je de bepaalde variabelen die nodig zijn.
                 this.Hide();
-                Form3 f3 = new Form3(naam, leeftijd, slaaptijd.ToShortTimeString());
+                Form3 f3 = new Form3(CurrentUser, sleepSession, slaaptijd);
                 f3.ShowDialog();
             }
             catch(Exception)
@@ -50,16 +56,19 @@ namespace Sleepwell
             {
                 //optimale korte slaap is 6uur, 4 slaap cyclussen
                 slaaptijd = opstaTijd.AddHours(-6);
+                sleep_duration = 6;
             }
             else if (rbLangeSlaap.Checked)
             {
                 //optimale lange slaap is 9uur, 6 slaap cyclussen
                 slaaptijd = opstaTijd.AddHours(-9);
+                sleep_duration = 9;
             }
             else
             {
                 //optimale normale slaap is 7,5uur, 5 slaap cyclussen
                 slaaptijd = opstaTijd.AddHours(-7.5);
+                sleep_duration = 7.5;
             }
 
             return slaaptijd;           
