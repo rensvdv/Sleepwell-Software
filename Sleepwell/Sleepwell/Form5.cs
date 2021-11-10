@@ -72,5 +72,22 @@ namespace Sleepwell
             this.Close();
             f1.Show();
         }
+
+        private void tbxWachtwoord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Hide_Show_Register_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Hide_Show_Register.Checked)
+            {
+                tbxWachtwoord.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbxWachtwoord.UseSystemPasswordChar = true;
+            }
     }
+}
 }

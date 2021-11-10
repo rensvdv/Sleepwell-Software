@@ -40,6 +40,7 @@ namespace Sleepwell
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnTerugNaarInloggen = new System.Windows.Forms.Button();
+            this.Hide_Show_Register = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label5
@@ -47,7 +48,7 @@ namespace Sleepwell
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(467, 238);
+            this.label5.Location = new System.Drawing.Point(413, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 25);
             this.label5.TabIndex = 25;
@@ -87,7 +88,7 @@ namespace Sleepwell
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(503, 137);
+            this.label2.Location = new System.Drawing.Point(453, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 25);
             this.label2.TabIndex = 29;
@@ -95,7 +96,7 @@ namespace Sleepwell
             // 
             // tbxLeeftijd
             // 
-            this.tbxLeeftijd.Location = new System.Drawing.Point(465, 165);
+            this.tbxLeeftijd.Location = new System.Drawing.Point(411, 165);
             this.tbxLeeftijd.Name = "tbxLeeftijd";
             this.tbxLeeftijd.Size = new System.Drawing.Size(179, 22);
             this.tbxLeeftijd.TabIndex = 30;
@@ -109,10 +110,12 @@ namespace Sleepwell
             // 
             // tbxWachtwoord
             // 
-            this.tbxWachtwoord.Location = new System.Drawing.Point(465, 266);
+            this.tbxWachtwoord.Location = new System.Drawing.Point(411, 266);
             this.tbxWachtwoord.Name = "tbxWachtwoord";
             this.tbxWachtwoord.Size = new System.Drawing.Size(179, 22);
             this.tbxWachtwoord.TabIndex = 32;
+            this.tbxWachtwoord.UseSystemPasswordChar = true;
+            this.tbxWachtwoord.TextChanged += new System.EventHandler(this.tbxWachtwoord_TextChanged);
             // 
             // label3
             // 
@@ -145,12 +148,25 @@ namespace Sleepwell
             this.btnTerugNaarInloggen.UseVisualStyleBackColor = true;
             this.btnTerugNaarInloggen.Click += new System.EventHandler(this.btnTerugNaarInloggen_Click);
             // 
+            // Hide_Show_Register
+            // 
+            this.Hide_Show_Register.AutoSize = true;
+            this.Hide_Show_Register.ForeColor = System.Drawing.Color.White;
+            this.Hide_Show_Register.Location = new System.Drawing.Point(596, 266);
+            this.Hide_Show_Register.Name = "Hide_Show_Register";
+            this.Hide_Show_Register.Size = new System.Drawing.Size(181, 21);
+            this.Hide_Show_Register.TabIndex = 37;
+            this.Hide_Show_Register.Text = "Wachtwoord weergeven";
+            this.Hide_Show_Register.UseVisualStyleBackColor = true;
+            this.Hide_Show_Register.CheckedChanged += new System.EventHandler(this.Hide_Show_Register_CheckedChanged);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Hide_Show_Register);
             this.Controls.Add(this.btnTerugNaarInloggen);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
@@ -183,5 +199,6 @@ namespace Sleepwell
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnTerugNaarInloggen;
+        private System.Windows.Forms.CheckBox Hide_Show_Register;
     }
 }

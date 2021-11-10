@@ -91,7 +91,7 @@ namespace Sleepwell
                 MessageBox.Show("If UserROW");
                 while (usersRow.Read())
                 {
-                    CurrentUser.Id = (int)usersRow["id"];
+                 
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
                     
@@ -116,5 +116,17 @@ namespace Sleepwell
             f5.Show();
             this.Hide();
         }
+
+        private void Hide_Show_Login_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Hide_Show_Login.Checked)
+            {
+                tbxWW.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbxWW.UseSystemPasswordChar = true;
+            }
     }
+}
 }
