@@ -40,6 +40,7 @@ namespace Sleepwell
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnTerugNaarInloggen = new System.Windows.Forms.Button();
+            this.Hide_Show_Register = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label5
@@ -146,12 +147,25 @@ namespace Sleepwell
             this.btnTerugNaarInloggen.UseVisualStyleBackColor = true;
             this.btnTerugNaarInloggen.Click += new System.EventHandler(this.btnTerugNaarInloggen_Click);
             // 
+            // Hide_Show_Register
+            // 
+            this.Hide_Show_Register.AutoSize = true;
+            this.Hide_Show_Register.ForeColor = System.Drawing.Color.White;
+            this.Hide_Show_Register.Location = new System.Drawing.Point(659, 266);
+            this.Hide_Show_Register.Name = "Hide_Show_Register";
+            this.Hide_Show_Register.Size = new System.Drawing.Size(129, 21);
+            this.Hide_Show_Register.TabIndex = 39;
+            this.Hide_Show_Register.Text = "Show Password";
+            this.Hide_Show_Register.UseVisualStyleBackColor = true;
+            this.Hide_Show_Register.CheckedChanged += new System.EventHandler(this.Hide_Show_Login_CheckedChanged);
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Hide_Show_Register);
             this.Controls.Add(this.btnTerugNaarInloggen);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
@@ -184,5 +198,6 @@ namespace Sleepwell
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnTerugNaarInloggen;
+        private System.Windows.Forms.CheckBox Hide_Show_Register;
     }
 }
