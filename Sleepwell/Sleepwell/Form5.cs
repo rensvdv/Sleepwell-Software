@@ -29,7 +29,7 @@ namespace Sleepwell
         private void VoerQueryUit(string naam, string email, string wachtwoord, int leeftijd)
         {
             string ww = tbxWachtwoord.Text;
-            using (SHA1 sha1Hash = SHA1.Create())
+            using (SHA256 sha1Hash = SHA256.Create())
             {
                 //From String to byte array
                 byte[] passwordBytes = Encoding.UTF8.GetBytes(ww);

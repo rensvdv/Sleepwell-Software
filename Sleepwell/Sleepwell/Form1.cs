@@ -66,7 +66,7 @@ namespace Sleepwell
         private void btnDoorNaarForm2_Click(object sender, EventArgs e)
         {
             string password = tbxWW.Text;
-            using (SHA1 sha1Hash = SHA1.Create())
+            using (SHA256 sha1Hash = SHA256.Create())
             {
                 //From String to byte array
                 byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
