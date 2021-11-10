@@ -43,6 +43,7 @@ namespace Sleepwell
             this.label2 = new System.Windows.Forms.Label();
             this.lblFoutmelding = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Hide_Show_Login = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,11 @@ namespace Sleepwell
             this.tbxWW.Name = "tbxWW";
             this.tbxWW.Size = new System.Drawing.Size(317, 22);
             this.tbxWW.TabIndex = 17;
+<<<<<<< HEAD
+            this.tbxWW.UseSystemPasswordChar = true;
+            this.tbxWW.TextChanged += new System.EventHandler(this.tbxWW_TextChanged);
+=======
+>>>>>>> main
             // 
             // tbxEmail
             // 
@@ -167,12 +173,24 @@ namespace Sleepwell
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // Hide_Show_Login
+            // 
+            this.Hide_Show_Login.AutoSize = true;
+            this.Hide_Show_Login.ForeColor = System.Drawing.Color.White;
+            this.Hide_Show_Login.Location = new System.Drawing.Point(514, 214);
+            this.Hide_Show_Login.Name = "Hide_Show_Login";
+            this.Hide_Show_Login.Size = new System.Drawing.Size(129, 21);
+            this.Hide_Show_Login.TabIndex = 38;
+            this.Hide_Show_Login.Text = "Show Password";
+            this.Hide_Show_Login.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(676, 490);
+            this.Controls.Add(this.Hide_Show_Login);
             this.Controls.Add(this.lblFoutmelding);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -207,6 +225,7 @@ namespace Sleepwell
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFoutmelding;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox Hide_Show_Login;
     }
 }
 

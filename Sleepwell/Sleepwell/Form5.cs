@@ -72,5 +72,10 @@ namespace Sleepwell
             this.Close();
             f1.Show();
         }
+
+        private void Hide_Show_Login_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
