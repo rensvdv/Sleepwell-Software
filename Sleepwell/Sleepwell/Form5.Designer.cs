@@ -113,7 +113,6 @@ namespace Sleepwell
             this.tbxWachtwoord.Name = "tbxWachtwoord";
             this.tbxWachtwoord.Size = new System.Drawing.Size(179, 22);
             this.tbxWachtwoord.TabIndex = 32;
-            this.tbxWachtwoord.UseSystemPasswordChar = true;
             // 
             // label3
             // 
