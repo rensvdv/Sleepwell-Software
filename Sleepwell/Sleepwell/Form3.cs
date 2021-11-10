@@ -15,23 +15,22 @@ namespace Sleepwell
 {
     public partial class Form3 : Form
     {
-        
-        sleepSession sleepSession; // zo roep je de class aan
-        User CurrentUser;
-        DateTime SlaapTijd;
-        public Form3(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
+        string naam;
+        int leeftijd;
+        string slaaptijd;
+        public Form3(string naam, int leeftijd, string slaaptijd)
         {
             InitializeComponent();
-            this.CurrentUser = currentuser;
-            this.sleepSession = sleepsession;
-            this.SlaapTijd = slaaptijd;
+            this.naam = naam;
+            this.leeftijd = leeftijd;
+            this.slaaptijd = slaaptijd;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            lblInformatie.Text = "Naam: " + CurrentUser.Name + "\n" +
-                "Leeftijd: " + CurrentUser.Age + "\n" +
-                "Slaaptijd: " + SlaapTijd;
+            lblInformatie.Text = "Naam: " + naam + "\n" +
+                "Leeftijd: " + leeftijd + "\n" +
+                "Slaaptijd: " + slaaptijd;
         }
 
         private void MailVersturen()
@@ -105,7 +104,7 @@ namespace Sleepwell
         {
             tijd.Enabled = false;
             this.Hide();
-            Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd);
+            Form4 f4 = new Form4(naam, leeftijd, slaaptijd);
             f4.ShowDialog();
         }
     }

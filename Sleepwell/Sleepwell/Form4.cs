@@ -16,17 +16,19 @@ namespace Sleepwell
 {
     public partial class Form4 : Form
     {
-        User currentUser;
-        sleepSession sleepSession;
+        string naam;
+        int leeftijd;
+        string slaaptijd;
         bool isConnected = false;
-        DateTime slaaptijd;
+
         int pulseInNumbers;
         string pulse;
         SerialPort port;
-        public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
+        public Form4(string naam, int leeftijd, string slaaptijd)
         {
             InitializeComponent();
-           
+            this.naam = naam;
+            this.leeftijd = leeftijd;
             this.slaaptijd = slaaptijd;
         }
 
