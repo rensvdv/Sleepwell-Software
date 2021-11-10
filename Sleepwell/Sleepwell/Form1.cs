@@ -84,14 +84,11 @@ namespace Sleepwell
             string query = "SELECT * FROM users WHERE email ='" + email + "' AND password ='" + password + "'";
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
-            MessageBox.Show(password);
             if(usersRow.HasRows)
             {
                 CurrentUser = new User(id, name, email, leeftijd);
-                MessageBox.Show("If UserROW");
                 while (usersRow.Read())
                 {
-                    CurrentUser.Id = (int)usersRow["id"];
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
                     
