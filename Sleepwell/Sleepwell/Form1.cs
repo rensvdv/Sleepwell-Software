@@ -78,21 +78,23 @@ namespace Sleepwell
                 MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
             sqlconnect.Open();
             int id = 0;
-            string email = "";
+            string email = tbxEmail.Text;
             string name = "";
             int leeftijd = 11;
-            string query = "select email,password,name from users WHERE email ='" + tbxEmail.Text + "' AND password ='" + tbxWW.Text + "'";
+            string query = "SELECT * FROM users WHERE email ='" + email + "' AND password ='" + password + "'";
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
+            MessageBox.Show(password);
             if(usersRow.HasRows)
             {
                 CurrentUser = new User(id, name, email, leeftijd);
-
-                while(usersRow.Read())
+                MessageBox.Show("If UserROW");
+                while (usersRow.Read())
                 {
                     CurrentUser.Id = (int)usersRow["id"];
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
+                    
                     CurrentUser.Name = usersRow["name"].ToString();
 
                 }
