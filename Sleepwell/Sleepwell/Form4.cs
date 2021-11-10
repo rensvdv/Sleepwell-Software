@@ -109,10 +109,20 @@ namespace Sleepwell
 
         private void DataTimer_Tick(object sender, EventArgs e)
         {
-            GetData(pulse);
-            
-            
-            
+            //GetData(pulse);
+        }
+
+        int rating = 1;
+        private void tbRatingGeven_Scroll(object sender, EventArgs e)
+        {
+            //rating moet + 1 omdat value van de trackbar op 0 begint
+            rating = tbRatingGeven.Value + 1;
+            lblRatingWaarde.Text = rating.ToString();
+        }
+
+        private void btnRatingSturenNaarDatabase_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Uw rating van " + rating + " is verstuurd");
         }
     }
 }
