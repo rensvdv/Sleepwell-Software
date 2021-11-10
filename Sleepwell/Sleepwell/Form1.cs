@@ -115,10 +115,5 @@ namespace Sleepwell
             f5.Show();
             this.Hide();
         }
-
-        private void tbxWW_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
