@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Security.Cryptography;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +16,7 @@ namespace Sleepwell
 {
     public partial class Form1 : Form
     {
+        public User CurrentUser;
         public Form1()
         {
             InitializeComponent();
@@ -76,29 +77,27 @@ namespace Sleepwell
             }
                 MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
             sqlconnect.Open();
-            string email = tbxEmail.Text;
+            int id = 0;
+            string email = "";
             string name = "";
-            int leeftijd = 0;
-            string query = "select email,password,name,age from users WHERE email ='" + email + "' AND password ='" + password + "'";
-            
+            int leeftijd = 11;
+            string query = "select email,password,name from users WHERE email ='" + tbxEmail.Text + "' AND password ='" + tbxWW.Text + "'";
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
-            if(string.IsNullOrEmpty(tbxEmail.Text) || string.IsNullOrEmpty(tbxWW.Text))
-            {
-                MessageBox.Show("Your Email or Password is empty! Please fill in both fields!");
-            }
             if(usersRow.HasRows)
             {
+                CurrentUser = new User(id, name, email, leeftijd);
+
                 while(usersRow.Read())
                 {
-                    email = usersRow["email"].ToString();
+                    CurrentUser.Id = (int)usersRow["id"];
+                    CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
-                    name = usersRow["name"].ToString();
-                    leeftijd = Convert.ToInt32(usersRow["age"]);
+                    CurrentUser.Name = usersRow["name"].ToString();
 
                 }
-                MessageBox.Show("Welcome back " + name);
-                Form2 f2 = new Form2(name, leeftijd);
+                MessageBox.Show("Welcome back " + CurrentUser.Name);
+                Form2 f2 = new Form2(CurrentUser);
                 f2.Show();
                 this.Hide();
             }
