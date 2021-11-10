@@ -91,7 +91,7 @@ namespace Sleepwell
                 MessageBox.Show("If UserROW");
                 while (usersRow.Read())
                 {
-                 
+                    CurrentUser.Id = (int)usersRow["id"];
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
                     
