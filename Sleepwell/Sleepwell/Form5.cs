@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -27,13 +28,22 @@ namespace Sleepwell
 
         private void VoerQueryUit(string naam, string email, string wachtwoord, int leeftijd)
         {
+            string ww = tbxWachtwoord.Text;
+            using (SHA1 sha1Hash = SHA1.Create())
+            {
+                //From String to byte array
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(ww);
+                byte[] hashBytes = sha1Hash.ComputeHash(passwordBytes);
+                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+                ww = hash;
+            }
             MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
             sqlconnect.Open();
             MySqlCommand comm = sqlconnect.CreateCommand();
             comm.CommandText = "INSERT INTO users(name, email, password, age) VALUES(@name, @email, @password, @age)";
             comm.Parameters.AddWithValue("@name", naam);
             comm.Parameters.AddWithValue("@email", email);
-            comm.Parameters.AddWithValue("@password", wachtwoord);
+            comm.Parameters.AddWithValue("@password", ww);
             comm.Parameters.AddWithValue("@age", leeftijd);
             comm.ExecuteNonQuery();
             sqlconnect.Close();

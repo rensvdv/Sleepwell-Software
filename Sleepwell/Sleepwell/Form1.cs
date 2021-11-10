@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Security.Cryptography;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -64,15 +65,28 @@ namespace Sleepwell
 
         private void btnDoorNaarForm2_Click(object sender, EventArgs e)
         {
-            MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
+            string password = tbxWW.Text;
+            using (SHA1 sha1Hash = SHA1.Create())
+            {
+                //From String to byte array
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha1Hash.ComputeHash(passwordBytes);
+                string hash = BitConverter.ToString(hashBytes).Replace("-", String.Empty);
+                password = hash;
+            }
+                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
             sqlconnect.Open();
-            string email = "";
-            string password = "";
+            string email = tbxEmail.Text;
             string name = "";
-            int leeftijd = 11;
-            string query = "select email,password,name from users WHERE email ='" + tbxEmail.Text + "' AND password ='" + tbxWW.Text + "'";
+            int leeftijd = 0;
+            string query = "select email,password,name,age from users WHERE email ='" + email + "' AND password ='" + password + "'";
+            
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
+            if(string.IsNullOrEmpty(tbxEmail.Text) || string.IsNullOrEmpty(tbxWW.Text))
+            {
+                MessageBox.Show("Your Email or Password is empty! Please fill in both fields!");
+            }
             if(usersRow.HasRows)
             {
                 while(usersRow.Read())
@@ -80,6 +94,7 @@ namespace Sleepwell
                     email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
                     name = usersRow["name"].ToString();
+                    leeftijd = Convert.ToInt32(usersRow["age"]);
 
                 }
                 MessageBox.Show("Welcome back " + name);
