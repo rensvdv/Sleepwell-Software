@@ -74,6 +74,7 @@ namespace Sleepwell
             this.tbxWW.Name = "tbxWW";
             this.tbxWW.Size = new System.Drawing.Size(317, 22);
             this.tbxWW.TabIndex = 17;
+            this.tbxWW.UseSystemPasswordChar = true;
             // 
             // tbxEmail
             // 
