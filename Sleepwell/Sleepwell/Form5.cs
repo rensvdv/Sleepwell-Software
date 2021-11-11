@@ -52,12 +52,19 @@ namespace Sleepwell
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            if (tbxBevestigWW.Text != tbxWachtwoord.Text)
+            {
+                MessageBox.Show("Uw wachtwoorden zijn niet gelijk aan elkaar Wachtwoorden zijn"); 
+            }
+            else if(tbxBevestigWW.Text == tbxWachtwoord.Text)
+            { 
                 naam = tbxNaam.Text;
                 email = tbxEmail.Text;
                 wachtwoord = tbxWachtwoord.Text;
                 leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
-                
+
                 VoerQueryUit(naam, email, wachtwoord, leeftijd);
+            }
 
         }
         
@@ -89,5 +96,17 @@ namespace Sleepwell
                 tbxWachtwoord.UseSystemPasswordChar = true;
             }
     }
-}
+
+        private void cbBevestig_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbBevestig.Checked)
+            {
+                tbxBevestigWW.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                tbxBevestigWW.UseSystemPasswordChar = true;
+            }
+        }
+    }
 }

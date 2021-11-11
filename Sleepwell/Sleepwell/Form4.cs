@@ -46,7 +46,7 @@ namespace Sleepwell
         private void ConnectToArduino()
         {
             isConnected = true;
-            string selectedPort = "COM6";
+            string selectedPort = "COM5";
             try
             {
                 port = new SerialPort(selectedPort, 9600, Parity.None, 8, StopBits.One);
