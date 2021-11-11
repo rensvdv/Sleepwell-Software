@@ -30,9 +30,9 @@ namespace Sleepwell
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataTimer = new System.Windows.Forms.Timer(this.components);
@@ -48,18 +48,18 @@ namespace Sleepwell
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(7, 8);
-            this.chart1.Margin = new System.Windows.Forms.Padding(2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(9, 10);
+            this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(217, 141);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(289, 174);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
@@ -71,17 +71,19 @@ namespace Sleepwell
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 199);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(16, 245);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(286, 134);
+            this.listBox1.Size = new System.Drawing.Size(380, 164);
             this.listBox1.TabIndex = 1;
             // 
             // btnRatingSturenNaarDatabase
             // 
-            this.btnRatingSturenNaarDatabase.Location = new System.Drawing.Point(360, 98);
-            this.btnRatingSturenNaarDatabase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRatingSturenNaarDatabase.Location = new System.Drawing.Point(480, 121);
+            this.btnRatingSturenNaarDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRatingSturenNaarDatabase.Name = "btnRatingSturenNaarDatabase";
-            this.btnRatingSturenNaarDatabase.Size = new System.Drawing.Size(56, 28);
+            this.btnRatingSturenNaarDatabase.Size = new System.Drawing.Size(75, 34);
             this.btnRatingSturenNaarDatabase.TabIndex = 2;
             this.btnRatingSturenNaarDatabase.Text = "Verstuur";
             this.btnRatingSturenNaarDatabase.UseVisualStyleBackColor = true;
@@ -89,11 +91,11 @@ namespace Sleepwell
             // 
             // tbRatingGeven
             // 
-            this.tbRatingGeven.Location = new System.Drawing.Point(338, 48);
-            this.tbRatingGeven.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tbRatingGeven.Maximum = 5;
+            this.tbRatingGeven.Location = new System.Drawing.Point(451, 59);
+            this.tbRatingGeven.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbRatingGeven.Maximum = 4;
             this.tbRatingGeven.Name = "tbRatingGeven";
-            this.tbRatingGeven.Size = new System.Drawing.Size(116, 45);
+            this.tbRatingGeven.Size = new System.Drawing.Size(155, 56);
             this.tbRatingGeven.TabIndex = 3;
             this.tbRatingGeven.Scroll += new System.EventHandler(this.tbRatingGeven_Scroll);
             // 
@@ -102,10 +104,9 @@ namespace Sleepwell
             this.lblRatingWaarde.AutoSize = true;
             this.lblRatingWaarde.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRatingWaarde.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblRatingWaarde.Location = new System.Drawing.Point(398, 10);
-            this.lblRatingWaarde.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRatingWaarde.Location = new System.Drawing.Point(531, 12);
             this.lblRatingWaarde.Name = "lblRatingWaarde";
-            this.lblRatingWaarde.Size = new System.Drawing.Size(19, 20);
+            this.lblRatingWaarde.Size = new System.Drawing.Size(24, 25);
             this.lblRatingWaarde.TabIndex = 36;
             this.lblRatingWaarde.Text = "1";
             // 
@@ -114,10 +115,9 @@ namespace Sleepwell
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(334, 10);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(445, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 37;
             this.label2.Text = "Rating:";
             // 
@@ -126,19 +126,18 @@ namespace Sleepwell
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(414, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(552, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(24, 20);
+            this.label1.Size = new System.Drawing.Size(31, 25);
             this.label1.TabIndex = 38;
             this.label1.Text = "/5";
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblRatingWaarde);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -146,7 +145,7 @@ namespace Sleepwell
             this.Controls.Add(this.btnRatingSturenNaarDatabase);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.chart1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form4";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.Form4_Load);
