@@ -89,6 +89,8 @@ namespace Sleepwell
                 CurrentUser = new User(id, name, email, leeftijd);
                 while (usersRow.Read())
                 {
+                    id = int.Parse(usersRow["id"].ToString());
+                    CurrentUser.Id = id;
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
                     

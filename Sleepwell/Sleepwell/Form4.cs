@@ -20,6 +20,8 @@ namespace Sleepwell
         sleepSession sleepSession;
         bool isConnected = false;
         DateTime slaaptijd;
+        List<int> pulses;
+        double AvgBpm;
         int pulseInNumbers;
         string pulse;
         SerialPort port;
@@ -33,6 +35,7 @@ namespace Sleepwell
         private void Form4_Load(object sender, EventArgs e)
         {
             ConnectToArduino();
+            pulses = new List<int>();
 
             if (isConnected)
             {
@@ -48,6 +51,7 @@ namespace Sleepwell
             {
                 port = new SerialPort(selectedPort, 9600, Parity.None, 8, StopBits.One);
                 port.Open();
+               
             }catch(Exception es)
             {
                 MessageBox.Show("Failed to connect");
@@ -62,30 +66,36 @@ namespace Sleepwell
             // a command has 4 letters
             port.Write("#DATA\n");
             data = port.ReadExisting();
-            if(data != "")
+            
+            if (data != "")
             {
-               
+               // string cleanedData = data.Replace("\n", "").Replace("\r", "");
+
+                pulseInNumbers = int.Parse(data);
+                pulses.Add(pulseInNumbers);
+                //MessageBox.Show(data);
+                listBox1.Items.Add(data);
                 if (data.Contains("\n"))
                 {
-                    string cleanedData = data.Replace("\n", "").Replace("\r", "");
-                    pulseInNumbers = int.Parse(data);
+                    
                 }
 
 
-                if (pulseInNumbers > 150)
-                {
+                //if (pulseInNumbers > 150)
+                //{
 
-                }
-                else
-                {
-                    data = pulseInNumbers.ToString();
-                    listBox1.Items.Add(data);
-                }
+                //}
+                //else
+                //{
+                //    //data = pulseInNumbers.ToString();
+                  
 
+
+                //}
             }
             else
             {
-               
+
             }
 
 
@@ -109,7 +119,7 @@ namespace Sleepwell
 
         private void DataTimer_Tick(object sender, EventArgs e)
         {
-            //GetData(pulse);
+            GetData(pulse);
         }
 
         int rating = 1;
@@ -122,7 +132,26 @@ namespace Sleepwell
 
         private void btnRatingSturenNaarDatabase_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Uw rating van " + rating + " is verstuurd");
+           AvgBpm = getBPM(AvgBpm);
+            MessageBox.Show(AvgBpm.ToString());
+        }
+
+        private double getBPM(double BPM)
+        {
+
+            BPM = pulses.Average();
+            return BPM;
+        }
+        private void EndSession()
+        {
+            dataTimer.Stop();
+
+
+        }
+
+        private void WakeUpButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
