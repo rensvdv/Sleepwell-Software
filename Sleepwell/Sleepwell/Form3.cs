@@ -19,6 +19,7 @@ namespace Sleepwell
         sleepSession sleepSession; // zo roep je de class aan
         User CurrentUser;
         DateTime SlaapTijd;
+        bool Mailsent = false;
 
         public Form3(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
         {
@@ -48,7 +49,7 @@ namespace Sleepwell
 
                 //inhoud van de email toevoegen
                 reminder.Subject = "Reminder";
-                reminder.TextBody = "Hallo! " + CurrentUser.Name + " Over een uur is het door ons geadviseerde slaaptijd: " + SlaapTijd + "Wij raden aan om de blauwlicht filter op uw telefoon in te schakelen! Probeer eventueel ook alvast uw telefoon minder te gebruiken"; 
+                reminder.TextBody = "Hallo! " + CurrentUser.Name + " Over een uur is het door ons geadviseerde slaaptijd: " + SlaapTijd.ToString("HH:mm:ss") + " Wij raden aan om de blauwlicht filter op uw telefoon in te schakelen! Probeer eventueel ook alvast uw telefoon minder te gebruiken."; 
 
                 //gmail smtp server 
                 SmtpServer server = new SmtpServer("smtp.gmail.com");
@@ -84,7 +85,7 @@ namespace Sleepwell
             {
                 interval += TimeSpan.FromDays(+1);
             }
-            interval -= TimeSpan.FromHours(-1);
+            interval -= TimeSpan.FromHours(1);
             return interval;
         }
 
@@ -100,8 +101,14 @@ namespace Sleepwell
 
             //waarde timer in de reminder label zetten
             lbTimer.Text = "U wordt herrinerd over: " + interval.Hours.ToString() + " Uur " + interval.Minutes.ToString() + " Minuten " + interval.Seconds.ToString() + " Seconden";
-            //als timer 0 is mail versturen
-            //daarna het label onzichtbaar maken
+            if(Mailsent == false && interval.TotalHours < 0) 
+            // Total hours = Hours.MinutesSeconds Displayed als: 0.2580284, dit wordt dus pas geactiveerd als hele timer klaar is
+            {
+                Mailsent = true;
+                lbTimer.Hide();
+                MailVersturen();
+            }
+
            
         }
 
@@ -118,6 +125,13 @@ namespace Sleepwell
             Form2 f2 = new Form2(CurrentUser);
             f2.Show();
                 this.Close();
+        }
+
+        private void bStartDemo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Demo Mode started.. Reminder will be send immediately!");
+            MailVersturen();
+
         }
     }
 }
