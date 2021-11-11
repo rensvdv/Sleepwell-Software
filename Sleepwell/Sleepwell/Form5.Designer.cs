@@ -51,7 +51,7 @@ namespace Sleepwell
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(371, 171);
+            this.label5.Location = new System.Drawing.Point(203, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 25);
             this.label5.TabIndex = 25;
@@ -62,7 +62,7 @@ namespace Sleepwell
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(135, 171);
+            this.label4.Location = new System.Drawing.Point(658, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 25);
             this.label4.TabIndex = 24;
@@ -73,7 +73,7 @@ namespace Sleepwell
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(135, 70);
+            this.label1.Location = new System.Drawing.Point(179, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 27;
@@ -81,7 +81,7 @@ namespace Sleepwell
             // 
             // tbxNaam
             // 
-            this.tbxNaam.Location = new System.Drawing.Point(82, 98);
+            this.tbxNaam.Location = new System.Drawing.Point(128, 98);
             this.tbxNaam.Name = "tbxNaam";
             this.tbxNaam.Size = new System.Drawing.Size(179, 22);
             this.tbxNaam.TabIndex = 26;
@@ -106,14 +106,14 @@ namespace Sleepwell
             // 
             // tbxEmail
             // 
-            this.tbxEmail.Location = new System.Drawing.Point(82, 199);
+            this.tbxEmail.Location = new System.Drawing.Point(597, 98);
             this.tbxEmail.Name = "tbxEmail";
             this.tbxEmail.Size = new System.Drawing.Size(179, 22);
             this.tbxEmail.TabIndex = 31;
             // 
             // tbxWachtwoord
             // 
-            this.tbxWachtwoord.Location = new System.Drawing.Point(369, 199);
+            this.tbxWachtwoord.Location = new System.Drawing.Point(201, 197);
             this.tbxWachtwoord.Name = "tbxWachtwoord";
             this.tbxWachtwoord.Size = new System.Drawing.Size(179, 22);
             this.tbxWachtwoord.TabIndex = 32;
@@ -133,7 +133,7 @@ namespace Sleepwell
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(319, 340);
+            this.btnRegister.Location = new System.Drawing.Point(402, 265);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(136, 42);
             this.btnRegister.TabIndex = 35;
@@ -155,7 +155,7 @@ namespace Sleepwell
             // 
             this.Hide_Show_Register.AutoSize = true;
             this.Hide_Show_Register.ForeColor = System.Drawing.Color.White;
-            this.Hide_Show_Register.Location = new System.Drawing.Point(554, 199);
+            this.Hide_Show_Register.Location = new System.Drawing.Point(201, 225);
             this.Hide_Show_Register.Name = "Hide_Show_Register";
             this.Hide_Show_Register.Size = new System.Drawing.Size(181, 21);
             this.Hide_Show_Register.TabIndex = 37;
@@ -165,7 +165,7 @@ namespace Sleepwell
             // 
             // tbxBevestigWW
             // 
-            this.tbxBevestigWW.Location = new System.Drawing.Point(368, 265);
+            this.tbxBevestigWW.Location = new System.Drawing.Point(556, 197);
             this.tbxBevestigWW.Name = "tbxBevestigWW";
             this.tbxBevestigWW.Size = new System.Drawing.Size(179, 22);
             this.tbxBevestigWW.TabIndex = 39;
@@ -176,7 +176,7 @@ namespace Sleepwell
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(314, 237);
+            this.label6.Location = new System.Drawing.Point(498, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(291, 25);
             this.label6.TabIndex = 38;
@@ -186,7 +186,7 @@ namespace Sleepwell
             // 
             this.cbBevestig.AutoSize = true;
             this.cbBevestig.ForeColor = System.Drawing.Color.White;
-            this.cbBevestig.Location = new System.Drawing.Point(554, 265);
+            this.cbBevestig.Location = new System.Drawing.Point(556, 225);
             this.cbBevestig.Name = "cbBevestig";
             this.cbBevestig.Size = new System.Drawing.Size(181, 21);
             this.cbBevestig.TabIndex = 40;
@@ -199,7 +199,7 @@ namespace Sleepwell
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(914, 496);
             this.Controls.Add(this.cbBevestig);
             this.Controls.Add(this.tbxBevestigWW);
             this.Controls.Add(this.label6);

@@ -19,6 +19,7 @@ namespace Sleepwell
         sleepSession sleepSession; // zo roep je de class aan
         User CurrentUser;
         DateTime SlaapTijd;
+
         public Form3(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace Sleepwell
 
                 //afzender en ontvanger kiezen
                 reminder.From = "sleepwellfontys@gmail.com";
-                reminder.To = CurrentUser.Email;
+                reminder.To = "robboorsma@gmail.com";
 
                 //inhoud van de email toevoegen
                 reminder.Subject = "Reminder";
@@ -83,36 +84,25 @@ namespace Sleepwell
             {
                 interval += TimeSpan.FromDays(+1);
             }
+            interval -= TimeSpan.FromHours(-1);
             return interval;
         }
+
 
         //int om af te tellen voor de reminder
         //int timer = 10;
         private void tijd_Tick(object sender, EventArgs e)
         {
-             TimeSpan interval = Berekentijd();
-
+            TimeSpan interval = Berekentijd();
+            
             //laat de huidige tijd zien
             lblHuidigeTijd.Text = DateTime.Now.ToString("HH:mm:ss");
 
             //waarde timer in de reminder label zetten
             lbTimer.Text = "U wordt herrinerd over: " + interval.Hours.ToString() + " Uur " + interval.Minutes.ToString() + " Minuten " + interval.Seconds.ToString() + " Seconden";
-            
-
-            //timer waarde verlagen
-           //` timerinSEC -= 1;
-
             //als timer 0 is mail versturen
             //daarna het label onzichtbaar maken
-           /* if (interval == 0)
-            {
-                MailVersturen();
-            }
-            if (interval <= 0)
-            {
-                lbTimer.Visible = false;
-            }
-           */
+           
         }
 
         private void btnNaarForm4_Click(object sender, EventArgs e)

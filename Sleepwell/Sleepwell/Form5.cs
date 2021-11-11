@@ -54,7 +54,7 @@ namespace Sleepwell
         {
             if (tbxBevestigWW.Text != tbxWachtwoord.Text)
             {
-                MessageBox.Show("Uw wachtwoorden zijn niet gelijk aan elkaar Wachtwoorden zijn"); 
+                MessageBox.Show("Uw wachtwoorden zijn niet gelijk aan elkaar"); 
             }
             else if(tbxBevestigWW.Text == tbxWachtwoord.Text)
             { 
