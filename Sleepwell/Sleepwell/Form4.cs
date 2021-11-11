@@ -28,7 +28,7 @@ namespace Sleepwell
         public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
         {
             InitializeComponent();
-           
+
             this.slaaptijd = slaaptijd;
         }
 
@@ -51,12 +51,13 @@ namespace Sleepwell
             {
                 port = new SerialPort(selectedPort, 9600, Parity.None, 8, StopBits.One);
                 port.Open();
-               
-            }catch(Exception es)
+
+            }
+            catch (Exception es)
             {
                 MessageBox.Show("Failed to connect");
             }
-            
+
 
         }
 
@@ -66,10 +67,10 @@ namespace Sleepwell
             // a command has 4 letters
             port.Write("#DATA\n");
             data = port.ReadExisting();
-            
+
             if (data != "")
             {
-               // string cleanedData = data.Replace("\n", "").Replace("\r", "");
+                // string cleanedData = data.Replace("\n", "").Replace("\r", "");
 
                 pulseInNumbers = int.Parse(data);
                 pulses.Add(pulseInNumbers);
@@ -77,7 +78,7 @@ namespace Sleepwell
                 listBox1.Items.Add(data);
                 if (data.Contains("\n"))
                 {
-                    
+
                 }
 
 
@@ -88,7 +89,7 @@ namespace Sleepwell
                 //else
                 //{
                 //    //data = pulseInNumbers.ToString();
-                  
+
 
 
                 //}
@@ -132,7 +133,7 @@ namespace Sleepwell
 
         private void btnRatingSturenNaarDatabase_Click(object sender, EventArgs e)
         {
-           AvgBpm = getBPM(AvgBpm);
+            AvgBpm = getBPM(AvgBpm);
             MessageBox.Show(AvgBpm.ToString());
         }
 
@@ -151,7 +152,39 @@ namespace Sleepwell
 
         private void WakeUpButton_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void DataVersturen()
+        {
+            MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
+            sqlconnect.Open();
+            MySqlCommand comm = sqlconnect.CreateCommand();
+            comm.CommandText = "INSERT INTO sleepdata(user_id, sleep_duration, average_bpm, rating) VALUES(@user_id, @sleep_duration, @average_bpm, @rating)";
+            comm.Parameters.AddWithValue("@user_id", currentUser.Id);
+            comm.Parameters.AddWithValue("@sleep_duration", sleepSession.Sleep_duration);
+            comm.Parameters.AddWithValue("@average_bpm", sleepSession.Avg_BPM);
+            comm.Parameters.AddWithValue("@rating", rating);
+            comm.ExecuteNonQuery();
+            sqlconnect.Close();
+            MessageBox.Show("Account aangemaakt");
+        }
+
+        private void GetSQLData()
+        {
+            MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
+            sqlconnect.Open();
+            string query = "SELECT * FROM sleepdata WHERE user_id = '" + currentUser.Id + "'";
+            MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
+            MySqlDataReader usersRow = cmd.ExecuteReader();
+            if (usersRow.HasRows)
+            {
+
+
+
+            }
+
+
         }
     }
 }
