@@ -29,9 +29,9 @@ namespace Sleepwell
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            lblInformatie.Text = "Naam: " + CurrentUser.Name + "\n" +
+            lbInfo.Text = "Naam: " + CurrentUser.Name + "\n" +
                 "Leeftijd: " + CurrentUser.Age + "\n" +
-                "Slaaptijd: " + SlaapTijd;
+                "Slaaptijd: " + SlaapTijd.ToString("HH:mm:ss");
         }
 
         private void MailVersturen()
@@ -43,11 +43,11 @@ namespace Sleepwell
 
                 //afzender en ontvanger kiezen
                 reminder.From = "sleepwellfontys@gmail.com";
-                reminder.To = "rensvelden@gmail.com";
+                reminder.To = CurrentUser.Email;
 
                 //inhoud van de email toevoegen
                 reminder.Subject = "Reminder";
-                reminder.TextBody = "Over 1u is uw slaaptijd";
+                reminder.TextBody = "Hallo! " + CurrentUser.Name + " Over een uur is het door ons geadviseerde slaaptijd: " + SlaapTijd + "Wij raden aan om de blauwlicht filter op uw telefoon in te schakelen! Probeer eventueel ook alvast uw telefoon minder te gebruiken"; 
 
                 //gmail smtp server 
                 SmtpServer server = new SmtpServer("smtp.gmail.com");
@@ -74,31 +74,45 @@ namespace Sleepwell
                 MessageBox.Show(e.ToString());
             }
         }
-
+        private TimeSpan Berekentijd()
+        {
+            DateTime starttijd = DateTime.Now;
+            DateTime eindtijd = SlaapTijd;
+            TimeSpan interval = eindtijd - starttijd;
+            if(Convert.ToInt32(interval.TotalHours) <0)
+            {
+                interval += TimeSpan.FromDays(+1);
+            }
+            return interval;
+        }
 
         //int om af te tellen voor de reminder
-        int timer = 10;
+        //int timer = 10;
         private void tijd_Tick(object sender, EventArgs e)
         {
+             TimeSpan interval = Berekentijd();
+
             //laat de huidige tijd zien
             lblHuidigeTijd.Text = DateTime.Now.ToString("HH:mm:ss");
 
             //waarde timer in de reminder label zetten
-            lblReminder.Text = timer.ToString();
+            lbTimer.Text = "U wordt herrinerd over: " + interval.Hours.ToString() + " Uur " + interval.Minutes.ToString() + " Minuten " + interval.Seconds.ToString() + " Seconden";
+            
 
             //timer waarde verlagen
-            timer -= 1;
+           //` timerinSEC -= 1;
 
             //als timer 0 is mail versturen
             //daarna het label onzichtbaar maken
-            if (timer == 0)
+           /* if (interval == 0)
             {
                 MailVersturen();
             }
-            if (timer <= 0)
+            if (interval <= 0)
             {
-                lblReminder.Visible = false;
+                lbTimer.Visible = false;
             }
+           */
         }
 
         private void btnNaarForm4_Click(object sender, EventArgs e)
@@ -107,6 +121,13 @@ namespace Sleepwell
             this.Hide();
             Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd);
             f4.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2(CurrentUser);
+            f2.Show();
+                this.Close();
         }
     }
 }

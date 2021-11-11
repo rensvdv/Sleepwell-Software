@@ -80,7 +80,7 @@ namespace Sleepwell
             int id = 0;
             string email = tbxEmail.Text;
             string name = "";
-            int leeftijd = 11;
+            int leeftijd = 0;
             string query = "SELECT * FROM users WHERE email ='" + email + "' AND password ='" + password + "'";
             MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
             MySqlDataReader usersRow = cmd.ExecuteReader();
@@ -93,7 +93,7 @@ namespace Sleepwell
                     CurrentUser.Id = id;
                     CurrentUser.Email = usersRow["email"].ToString();
                     password = usersRow["password"].ToString();
-                    
+                    CurrentUser.Age = Convert.ToInt32(usersRow["age"]);
                     CurrentUser.Name = usersRow["name"].ToString();
 
                 }
