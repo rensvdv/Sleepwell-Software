@@ -23,6 +23,7 @@ namespace Sleepwell
         List<int> pulses;
         double AvgBpm;
         int pulseInNumbers;
+        int count;
         string pulse;
         SerialPort port;
         public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
@@ -170,21 +171,24 @@ namespace Sleepwell
             MessageBox.Show("Account aangemaakt");
         }
 
-        private void GetSQLData()
+        private void getRows()
         {
             MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
             sqlconnect.Open();
-            string query = "SELECT * FROM sleepdata WHERE user_id = '" + currentUser.Id + "'";
-            MySqlCommand cmd = new MySqlCommand(query, sqlconnect);
-            MySqlDataReader usersRow = cmd.ExecuteReader();
-            if (usersRow.HasRows)
-            {
+            MessageBox.Show("Test1");
+            MySqlCommand cmd = sqlconnect.CreateCommand();
+            MessageBox.Show("Test2");
+            cmd.CommandText = "SELECT COUNT(*) FROM sleepdata WHERE user_id = " + sleepSession.User_id + "";
+            MessageBox.Show("Test3");
+             count =  int.Parse(cmd.ExecuteScalar().ToString());
+            MessageBox.Show(count.ToString());
 
 
+        }
 
-            }
-
-
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            getRows();
         }
     }
 }

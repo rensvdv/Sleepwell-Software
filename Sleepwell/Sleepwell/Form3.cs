@@ -116,11 +116,11 @@ namespace Sleepwell
         {
             MessageBox.Show("U heeft de slaapsessie gestart om: " + DateTime.Now.ToString("HH:mm:ss") + " Weltrusten!");
             btnNaarForm4.Text = "Stop slaapsessie";
-            /*
+            
             tijd.Enabled = false;
             this.Hide();
             Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd);
-            f4.ShowDialog(); */
+            f4.ShowDialog(); 
         }
 
         private void button1_Click(object sender, EventArgs e)
