@@ -29,7 +29,8 @@ namespace Sleepwell
         public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
         {
             InitializeComponent();
-
+            this.currentUser = currentuser;
+            this.sleepSession = sleepsession; 
             this.slaaptijd = slaaptijd;
         }
 
@@ -121,7 +122,7 @@ namespace Sleepwell
 
         private void DataTimer_Tick(object sender, EventArgs e)
         {
-            GetData(pulse);
+            //GetData(pulse);
         }
 
         int rating = 1;
@@ -136,6 +137,8 @@ namespace Sleepwell
         {
             AvgBpm = getBPM(AvgBpm);
             MessageBox.Show(AvgBpm.ToString());
+            DataVersturen();
+            //getRows();
         }
 
         private double getBPM(double BPM)
@@ -188,7 +191,7 @@ namespace Sleepwell
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            getRows();
+            
         }
     }
 }
