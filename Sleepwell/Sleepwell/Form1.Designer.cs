@@ -44,6 +44,7 @@ namespace Sleepwell
             this.lblFoutmelding = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.Hide_Show_Login = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -181,12 +182,23 @@ namespace Sleepwell
             this.Hide_Show_Login.UseVisualStyleBackColor = true;
             this.Hide_Show_Login.CheckedChanged += new System.EventHandler(this.Hide_Show_Login_CheckedChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(3, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 42);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "DEMO: Easy Login";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.ClientSize = new System.Drawing.Size(676, 490);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Hide_Show_Login);
             this.Controls.Add(this.lblFoutmelding);
             this.Controls.Add(this.label2);
@@ -223,6 +235,7 @@ namespace Sleepwell
         private System.Windows.Forms.Label lblFoutmelding;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.CheckBox Hide_Show_Login;
+        private System.Windows.Forms.Button button1;
     }
 }
 

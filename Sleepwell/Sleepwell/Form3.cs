@@ -45,7 +45,7 @@ namespace Sleepwell
 
                 //afzender en ontvanger kiezen
                 reminder.From = "sleepwellfontys@gmail.com";
-                reminder.To = "robboorsma@gmail.com";
+                reminder.To = CurrentUser.Email;
 
                 //inhoud van de email toevoegen
                 reminder.Subject = "Reminder";
@@ -114,10 +114,13 @@ namespace Sleepwell
 
         private void btnNaarForm4_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("U heeft de slaapsessie gestart om: " + DateTime.Now.ToString("HH:mm:ss") + " Weltrusten!");
+            btnNaarForm4.Text = "Stop slaapsessie";
+            /*
             tijd.Enabled = false;
             this.Hide();
             Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd);
-            f4.ShowDialog();
+            f4.ShowDialog(); */
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -129,8 +132,10 @@ namespace Sleepwell
 
         private void bStartDemo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Demo Mode started.. Reminder will be send immediately!");
+            MessageBox.Show("[DEMO] Demo Mode started.. Reminder will be send immediately!");
             MailVersturen();
+            MessageBox.Show("[DEMO] Now starting sleepsession...");
+
 
         }
     }

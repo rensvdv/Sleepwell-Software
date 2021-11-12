@@ -100,7 +100,7 @@ namespace Sleepwell
                 MessageBox.Show("Welcome back " + CurrentUser.Name);
                 Form2 f2 = new Form2(CurrentUser);
                 f2.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
@@ -113,7 +113,7 @@ namespace Sleepwell
         {
             Form5 f5 = new Form5();
             f5.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Hide_Show_Login_CheckedChanged(object sender, EventArgs e)
@@ -127,5 +127,12 @@ namespace Sleepwell
                 tbxWW.UseSystemPasswordChar = true;
             }
     }
-}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tbxEmail.Text = "ROB";
+            tbxWW.Text = "ROB";
+            btnDoorNaarForm2_Click(sender, e);
+        }
+    }
 }

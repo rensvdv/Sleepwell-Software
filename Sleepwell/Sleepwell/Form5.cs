@@ -57,13 +57,21 @@ namespace Sleepwell
                 MessageBox.Show("Uw wachtwoorden zijn niet gelijk aan elkaar"); 
             }
             else if(tbxBevestigWW.Text == tbxWachtwoord.Text)
-            { 
-                naam = tbxNaam.Text;
-                email = tbxEmail.Text;
-                wachtwoord = tbxWachtwoord.Text;
-                leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
+            {
+                try
+                {
+                    naam = tbxNaam.Text;
+                    email = tbxEmail.Text;
+                    wachtwoord = tbxWachtwoord.Text;
+                    leeftijd = Convert.ToInt32(tbxLeeftijd.Text);
 
-                VoerQueryUit(naam, email, wachtwoord, leeftijd);
+                    VoerQueryUit(naam, email, wachtwoord, leeftijd);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("U heeft nog niet alle velden ingevuld!");
+                        }
+
             }
 
         }

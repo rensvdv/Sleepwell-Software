@@ -96,7 +96,7 @@ namespace Sleepwell
             // btnNaarForm4
             // 
             this.btnNaarForm4.Location = new System.Drawing.Point(323, 427);
-            this.btnNaarForm4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNaarForm4.Margin = new System.Windows.Forms.Padding(4);
             this.btnNaarForm4.Name = "btnNaarForm4";
             this.btnNaarForm4.Size = new System.Drawing.Size(449, 46);
             this.btnNaarForm4.TabIndex = 37;
@@ -107,7 +107,7 @@ namespace Sleepwell
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(449, 46);
             this.button1.TabIndex = 38;
@@ -139,7 +139,7 @@ namespace Sleepwell
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbTimer);
             this.Controls.Add(this.lbInfo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
