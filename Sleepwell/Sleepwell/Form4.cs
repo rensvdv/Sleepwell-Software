@@ -109,22 +109,11 @@ namespace Sleepwell
             return data;
 
         }
-        private void CreateChart()
-        {
-            //voor deze methode moet er een chart element toegevoegd worden met de naam chrtHeartBeat
-            var series = new Series("Heartbeat");
-            //chart type veranderen naar lijn
-            series.ChartType = SeriesChartType.Line;
-            //de lijn zelf toevoegen
 
-            series.Points.DataBindXY(new[] { 1.00, 2.00, 3.400, 4.00 }, new[] { 50, 56, 45, 60 });
-            //chrtHeartbeat.Series.Add(series);
-
-        }
 
         private void DataTimer_Tick(object sender, EventArgs e)
         {
-            //GetData(pulse);
+            GetData(pulse);
         }
 
         int rating = 1;
@@ -140,6 +129,7 @@ namespace Sleepwell
             AvgBpm = getBPM(AvgBpm);
             MessageBox.Show(AvgBpm.ToString());
             DataVersturen();
+            TerugNaarForm2();
             //getRows();
         }
 
@@ -199,9 +189,19 @@ namespace Sleepwell
 
         }
 
+
+        private void TerugNaarForm2()
+        {
+            Form2 f2 = new Form2(currentUser);
+            f2.Show();
+            this.Close();
+        }
+
+
         private void btnStop_Click(object sender, EventArgs e)
         {
             EndSession();
+            gbRating.Visible = true;
         }
     }
 }
