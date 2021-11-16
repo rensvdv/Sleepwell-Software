@@ -19,6 +19,7 @@ namespace Sleepwell
         sleepSession sleepSession; // zo roep je de class aan
         User CurrentUser;
         DateTime SlaapTijd;
+        DateTime StartTime = new DateTime();
         bool Mailsent = false;
 
         public Form3(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
@@ -112,15 +113,18 @@ namespace Sleepwell
            
         }
 
-        private void btnNaarForm4_Click(object sender, EventArgs e)
+        private void btnStart_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("U heeft de slaapsessie gestart om: " + DateTime.Now.ToString("HH:mm:ss") + " Weltrusten!");
-            btnNaarForm4.Text = "Stop slaapsessie";
-            
-            tijd.Enabled = false;
-            this.Hide();
-            Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd);
-            f4.ShowDialog(); 
+            if (btnStart.Text == "Start slaapsessie")
+            {
+                MessageBox.Show("U heeft de slaapsessie gestart om: " + DateTime.Now.ToString("HH:mm:ss") + " Weltrusten!");
+                StartTime = DateTime.Now;
+                tijd.Enabled = false;
+                Form4 f4 = new Form4(CurrentUser, sleepSession, SlaapTijd, StartTime);
+                f4.Show();
+                this.Close();
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,8 +139,11 @@ namespace Sleepwell
             MessageBox.Show("[DEMO] Demo Mode started.. Reminder will be send immediately!");
             MailVersturen();
             MessageBox.Show("[DEMO] Now starting sleepsession...");
+            btnStart_Click(sender, e);
 
 
         }
+
+
     }
 }

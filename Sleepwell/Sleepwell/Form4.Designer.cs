@@ -38,6 +38,7 @@ namespace Sleepwell
             this.lblRatingWaarde = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbRatingGeven)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@ namespace Sleepwell
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(13, 273);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(380, 164);
             this.listBox1.TabIndex = 1;
@@ -110,12 +111,24 @@ namespace Sleepwell
             this.label1.TabIndex = 38;
             this.label1.Text = "/5";
             // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(135, 198);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 34);
+            this.btnStop.TabIndex = 39;
+            this.btnStop.Text = "Stop SlaapSessie";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnStop);
             this.Controls.Add(this.lblRatingWaarde);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -141,5 +154,6 @@ namespace Sleepwell
         private System.Windows.Forms.Label lblRatingWaarde;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnStop;
     }
 }

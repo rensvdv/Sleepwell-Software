@@ -68,8 +68,7 @@ namespace Sleepwell
                     VoerQueryUit(naam, email, wachtwoord, leeftijd);
                 }
                 catch (Exception)
-                {
-                    MessageBox.Show("U heeft nog niet alle velden ingevuld!");
+                { MessageBox.Show("U heeft nog niet alle velden ingevuld!");
                         }
 
             }
@@ -84,8 +83,9 @@ namespace Sleepwell
         private void btnTerugNaarInloggen_Click(object sender, EventArgs e)
         {
             Form1 f1 = new Form1();
-            this.Close();
             f1.Show();
+            this.Close();
+            
         }
 
         private void tbxWachtwoord_TextChanged(object sender, EventArgs e)

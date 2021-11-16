@@ -23,27 +23,6 @@ namespace Sleepwell
             
         }
         
-        private void SQLConnect()
-        {
-            try
-            {
-                MySqlConnection sqlconnect = new MySqlConnection("SERVER=192.168.52.68;port=3306;username=USER1;password=LekkerLekker1!;DATABASE=Sleepwell_database");
-                sqlconnect.Open();
-                if (sqlconnect.State == ConnectionState.Open)
-                {
-                    MessageBox.Show("I CONNECTED TO DATABASE");
-                }
-                else
-                {
-                    MessageBox.Show("I WAS UNABLE TO CONNECT");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
     private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -58,11 +37,6 @@ namespace Sleepwell
             lblHuidigeTijd.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
- 
-        private void btnAttemptConnectSQL_Click(object sender, EventArgs e)
-        {
-            SQLConnect();
-        }
 
         private void btnDoorNaarForm2_Click(object sender, EventArgs e)
         {
@@ -97,14 +71,14 @@ namespace Sleepwell
                     CurrentUser.Name = usersRow["name"].ToString();
 
                 }
-                MessageBox.Show("Welcome back " + CurrentUser.Name);
+                MessageBox.Show("Welkom terug " + CurrentUser.Name);
                 Form2 f2 = new Form2(CurrentUser);
                 f2.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Incorrect user name or password");
+                MessageBox.Show("Uw email en/of wachtwoord zijn onjuist!");
             }
             sqlconnect.Close();
         }
@@ -135,4 +109,10 @@ namespace Sleepwell
             btnDoorNaarForm2_Click(sender, e);
         }
     }
+
 }
+
+
+
+
+

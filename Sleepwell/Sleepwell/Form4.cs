@@ -20,18 +20,20 @@ namespace Sleepwell
         sleepSession sleepSession;
         bool isConnected = false;
         DateTime slaaptijd;
+        DateTime StartTime;
         List<int> pulses;
         double AvgBpm;
         int pulseInNumbers;
         int count;
         string pulse;
         SerialPort port;
-        public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd)
+        public Form4(User currentuser, sleepSession sleepsession, DateTime slaaptijd, DateTime StartTime)
         {
             InitializeComponent();
             this.currentUser = currentuser;
-            this.sleepSession = sleepsession; 
+            this.sleepSession = sleepsession;
             this.slaaptijd = slaaptijd;
+            this.StartTime = StartTime;
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -149,6 +151,9 @@ namespace Sleepwell
         }
         private void EndSession()
         {
+            DateTime EndTime = DateTime.Now;
+            TimeSpan geslapentijd = EndTime - StartTime;
+            MessageBox.Show("Geslapen tijd - Uren: " + geslapentijd.Hours.ToString() + " Minuten: " + geslapentijd.Minutes.ToString() + " Seconden: " + geslapentijd.Seconds.ToString());
             dataTimer.Stop();
 
 
@@ -183,7 +188,7 @@ namespace Sleepwell
             MessageBox.Show("Test2");
             cmd.CommandText = "SELECT COUNT(*) FROM sleepdata WHERE user_id = " + sleepSession.User_id + "";
             MessageBox.Show("Test3");
-             count =  int.Parse(cmd.ExecuteScalar().ToString());
+            count = int.Parse(cmd.ExecuteScalar().ToString());
             MessageBox.Show(count.ToString());
 
 
@@ -191,7 +196,12 @@ namespace Sleepwell
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            EndSession();
         }
     }
 }

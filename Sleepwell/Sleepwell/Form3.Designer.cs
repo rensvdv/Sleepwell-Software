@@ -35,7 +35,7 @@ namespace Sleepwell
             this.lbInfo = new System.Windows.Forms.Label();
             this.tijd = new System.Windows.Forms.Timer(this.components);
             this.lblHuidigeTijd = new System.Windows.Forms.Label();
-            this.btnNaarForm4 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bStartDemo = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -93,16 +93,16 @@ namespace Sleepwell
             this.lblHuidigeTijd.TabIndex = 36;
             this.lblHuidigeTijd.Text = "00:00:00";
             // 
-            // btnNaarForm4
+            // btnStart
             // 
-            this.btnNaarForm4.Location = new System.Drawing.Point(323, 427);
-            this.btnNaarForm4.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNaarForm4.Name = "btnNaarForm4";
-            this.btnNaarForm4.Size = new System.Drawing.Size(449, 46);
-            this.btnNaarForm4.TabIndex = 37;
-            this.btnNaarForm4.Text = "Start Sleep Session";
-            this.btnNaarForm4.UseVisualStyleBackColor = true;
-            this.btnNaarForm4.Click += new System.EventHandler(this.btnNaarForm4_Click);
+            this.btnStart.Location = new System.Drawing.Point(323, 427);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(449, 46);
+            this.btnStart.TabIndex = 37;
+            this.btnStart.Text = "Start slaapsessie";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // button1
             // 
@@ -134,7 +134,7 @@ namespace Sleepwell
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.bStartDemo);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnNaarForm4);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblHuidigeTijd);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.lbTimer);
@@ -155,7 +155,7 @@ namespace Sleepwell
         private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.Timer tijd;
         private System.Windows.Forms.Label lblHuidigeTijd;
-        private System.Windows.Forms.Button btnNaarForm4;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bStartDemo;
     }

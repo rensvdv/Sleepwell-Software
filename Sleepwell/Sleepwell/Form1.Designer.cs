@@ -36,7 +36,6 @@ namespace Sleepwell
             this.tbxEmail = new System.Windows.Forms.TextBox();
             this.tijd = new System.Windows.Forms.Timer(this.components);
             this.lblHuidigeTijd = new System.Windows.Forms.Label();
-            this.btnAttemptConnectSQL = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -101,16 +100,6 @@ namespace Sleepwell
             this.lblHuidigeTijd.Size = new System.Drawing.Size(88, 24);
             this.lblHuidigeTijd.TabIndex = 28;
             this.lblHuidigeTijd.Text = "00:00:00";
-            // 
-            // btnAttemptConnectSQL
-            // 
-            this.btnAttemptConnectSQL.Location = new System.Drawing.Point(185, 455);
-            this.btnAttemptConnectSQL.Name = "btnAttemptConnectSQL";
-            this.btnAttemptConnectSQL.Size = new System.Drawing.Size(313, 23);
-            this.btnAttemptConnectSQL.TabIndex = 29;
-            this.btnAttemptConnectSQL.Text = "Troubleshoot: Attempt MYSQL Connection";
-            this.btnAttemptConnectSQL.UseVisualStyleBackColor = true;
-            this.btnAttemptConnectSQL.Click += new System.EventHandler(this.btnAttemptConnectSQL_Click);
             // 
             // btnLogin
             // 
@@ -205,7 +194,6 @@ namespace Sleepwell
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.btnAttemptConnectSQL);
             this.Controls.Add(this.lblHuidigeTijd);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -227,7 +215,6 @@ namespace Sleepwell
         private System.Windows.Forms.TextBox tbxEmail;
         private System.Windows.Forms.Timer tijd;
         private System.Windows.Forms.Label lblHuidigeTijd;
-        private System.Windows.Forms.Button btnAttemptConnectSQL;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label1;

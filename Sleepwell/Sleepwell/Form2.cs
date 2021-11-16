@@ -36,9 +36,9 @@ namespace Sleepwell
                  opstaTijd = DateTime.Parse(tbxOpstaan.Text);
                  slaaptijd = SlaaptijdBerekenen(opstaTijd);
                 sleepSession = new sleepSession(CurrentUser.Id, sleep_duration, 0, date ); // als de class word aangeroepen geef je de bepaalde variabelen die nodig zijn.
-                this.Hide();
                 Form3 f3 = new Form3(CurrentUser, sleepSession, slaaptijd);
-                f3.ShowDialog();
+                f3.Show();
+                this.Close();
             }
             catch(Exception)
             {
